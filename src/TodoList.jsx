@@ -1,17 +1,18 @@
 import TodoListItem from './TodoListItem';
 
-function TodoList() {
-  const todos = [
-    { id: 1, title: 'review resources' },
-    { id: 2, title: 'review notes' },
-    { id: 3, title: 'code out app' },
-  ];
-
+function TodoList({ todoList }) {
   return (
+    // <ul>
+    //   {todoList.map((todo) => (
+    //     <TodoListItem key={todo.id} todo={todo} />
+    //   ))}
+    // </ul>
+
     <ul>
-      {todos.map((todo) => (
-        <TodoListItem key={todo.id} todo={todo} />
-      ))}
+      {todoList.map((todo) => {
+        console.log(todo);
+        return <TodoListItem key={todo.id} todo={todo} />;
+      })}
     </ul>
   );
 }
